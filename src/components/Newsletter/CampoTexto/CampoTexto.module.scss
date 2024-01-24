@@ -1,0 +1,30 @@
+@use '@/sass/variaveis' as *;
+
+.campo {
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+    display: flex;
+    width: 100%;
+
+    .input {
+        background: $branco url('./email.svg') 18px 32px no-repeat;
+        border: none;
+        color: $preto;
+        flex-grow: 1;
+        font-size: 1rem;
+        height: 75px;
+        outline: unset;
+        padding: 0 1rem 0 3.5rem;
+
+        &::placeholder {
+            opacity: 0.3;
+        }
+    }
+
+    .botao {
+        background: $amarelo;
+        box-shadow: 10px 10px 30px 0px rgba(255, 203, 71, 0.3);
+        color: $branco;
+        font-size: 1rem;
+        width: 194px;
+    }
+}
