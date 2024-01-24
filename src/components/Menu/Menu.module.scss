@@ -1,0 +1,30 @@
+@use '@/sass/variaveis' as *;
+
+.navbar {
+    display: flex;
+    height: 49px;
+    justify-content: space-between;
+    margin-top: 0.625rem;
+
+    .lista {
+        align-self: flex-end;
+        display: flex;
+
+        .item {
+            color: $preto;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.25rem;
+            margin-left: 0.8125rem;
+
+            &::after {
+                content: '/';
+                padding-left: 0.8125rem;
+            }
+
+            &:last-of-type::after {
+                content: none;
+            }
+        }
+    }
+}
