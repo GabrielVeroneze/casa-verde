@@ -1,0 +1,22 @@
+@use '@/sass/variaveis' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fonte-principal;
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
