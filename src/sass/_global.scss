@@ -19,6 +19,10 @@ button {
 }
 
 #root {
+    background-image: url('images/background.png'), url('images/hero-image.png'), url('images/body-shape.svg');
+    background-position: left top, 64.25% top, right top;
+    background-repeat: no-repeat;
+    background-size: cover, auto, 49.27%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
