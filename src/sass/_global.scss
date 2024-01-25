@@ -7,8 +7,11 @@
 }
 
 body {
+    $w: 1px; // Largura da linha
+    $n: 18; // Numero de linhas
+    background: linear-gradient(90deg, #0000 calc(100% - #{$w}), #c4c4c433 0);
+    background-size: calc((100% - #{$n} * #{$w}) / (#{$n} + 1) + #{$w}) 100%;
     font-family: $fonte-principal;
-    min-height: 100vh;
 }
 
 button {
