@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { useValidarEmail } from '@/hooks/useValidarEmail'
 import styles from './CampoTexto.module.scss'
 
 const CampoTexto = () => {
     const [emailUsuario, setEmailUsuario] = useState<string>('')
+
+    const { erroEmail, validacao } = useValidarEmail()
 
     return (
         <>
@@ -19,6 +22,9 @@ const CampoTexto = () => {
                     Assinar newsletter
                 </button>
             </form>
+            {erroEmail && (
+                <span className={styles.mensagemErro}>{erroEmail}</span>
+            )}
         </>
     )
 }
