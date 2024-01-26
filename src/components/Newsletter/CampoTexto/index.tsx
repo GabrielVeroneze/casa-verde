@@ -7,10 +7,17 @@ const CampoTexto = () => {
 
     const { erroEmail, validacao } = useValidarEmail()
 
+    const cadastrarEmail = (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault()
+
+        validacao(emailUsuario)
+    }
+
     return (
         <>
             <form
                 className={styles.campo}
+                onSubmit={evento => cadastrarEmail(evento)}
             >
                 <input
                     className={styles.input}
