@@ -1,0 +1,47 @@
+@use '@/sass/variaveis' as *;
+
+.card {
+    background-color: $branco;
+    background-position: -0px -21px;
+    background-repeat: no-repeat;
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-areas: '. conteudo';
+    grid-template-columns: 1fr 175px;
+    height: 200px;
+    width: 379px;
+
+    .conteudo {
+        grid-area: conteudo;
+        padding: 1.625rem 1.5rem 1.625rem 0;
+
+        .titulo {
+            color: $preto;
+            font-family: $fonte-secundaria;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        .preco {
+            color: rgba(32, 32, 32, 0.5);
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 1.5rem;
+        }
+
+        .botao {
+            background-image: url('images/icons/seta.svg');
+            background-position: right 6px;
+            background-repeat: no-repeat;
+            color: $amarelo;
+            font-size: 1rem;
+            height: 20px;
+            padding: 0;
+            text-align: left;
+            width: 111px;
+        }
+    }
+}
