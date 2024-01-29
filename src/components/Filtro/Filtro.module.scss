@@ -1,0 +1,12 @@
+@use '@/sass/variaveis' as *;
+
+.label {
+    color: $preto;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.inputWrapper {
+    display: flex;
+    gap: 1rem;
+}
