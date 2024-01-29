@@ -1,16 +1,16 @@
 import { v4 as uuidv4 } from 'uuid'
 import { useBuscarProdutos } from '@/hooks/useBuscarProdutos'
 import CardProduto from '@/components/CardProduto'
-import styles from './Ofertas.module.scss'
+import styles from './Produtos.module.scss'
 
-const Ofertas = () => {
+const Produtos = () => {
     const { produtos } = useBuscarProdutos()
 
     return (
         <section>
             <h2 className={styles.titulo}>
-                Conheça nossas <br />
-                <strong>ofertas</strong>
+                Conheça nossos <br />
+                <strong>produtos</strong>
             </h2>
             <div className={styles.produtos}>
                 {produtos.map(produto => (
@@ -21,4 +21,4 @@ const Ofertas = () => {
     )
 }
 
-export default Ofertas
+export default Produtos
