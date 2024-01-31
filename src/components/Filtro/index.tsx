@@ -1,10 +1,9 @@
-import { useState } from 'react'
 import InputReal from './InputReal'
 import styles from './Filtro.module.scss'
+import { useFiltrarProdutos } from '@/hooks/useFiltraProdutos'
 
 const Filtro = () => {
-    const [precoMinimo, setPrecoMinimo] = useState<string>('')
-    const [precoMaximo, setPrecoMaximo] = useState<string>('')
+    const { preco, setPreco } = useFiltrarProdutos()
 
     return (
         <div>
@@ -12,13 +11,23 @@ const Filtro = () => {
             <div className={styles.inputWrapper}>
                 <InputReal
                     placeholder="De"
-                    value={precoMinimo}
-                    onChange={evento => setPrecoMinimo(evento.target.value)}
+                    value={preco.precoMinimo}
+                    onChange={evento =>
+                        setPreco({
+                            ...preco,
+                            precoMinimo: evento.target.value,
+                        })
+                    }
                 />
                 <InputReal
                     placeholder="Até"
-                    value={precoMaximo}
-                    onChange={evento => setPrecoMaximo(evento.target.value)}
+                    value={preco.precoMaximo}
+                    onChange={evento => 
+                        setPreco({
+                            ...preco,
+                            precoMaximo: evento.target.value,
+                        })
+                    }
                 />
             </div>
         </div>
