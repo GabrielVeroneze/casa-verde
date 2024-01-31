@@ -1,6 +1,6 @@
+import { useFiltrarProdutos } from '@/hooks/useFiltraProdutos'
 import InputReal from './InputReal'
 import styles from './Filtro.module.scss'
-import { useFiltrarProdutos } from '@/hooks/useFiltraProdutos'
 
 const Filtro = () => {
     const { preco, setPreco } = useFiltrarProdutos()
@@ -22,7 +22,7 @@ const Filtro = () => {
                 <InputReal
                     placeholder="Até"
                     value={preco.precoMaximo}
-                    onChange={evento => 
+                    onChange={evento =>
                         setPreco({
                             ...preco,
                             precoMaximo: evento.target.value,
