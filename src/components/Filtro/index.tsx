@@ -1,9 +1,20 @@
-import { useFiltrarProdutos } from '@/hooks/useFiltraProdutos'
+import { useEffect, useState } from 'react'
+import { useManipularProdutos } from '@/hooks/useManipularProdutos'
+import { IFiltroPreco } from '@/interfaces/IFiltroPreco'
 import InputReal from './InputReal'
 import styles from './Filtro.module.scss'
 
 const Filtro = () => {
-    const { preco, setPreco } = useFiltrarProdutos()
+    const { filtrarProduto } = useManipularProdutos()
+    
+    const [preco, setPreco] = useState<IFiltroPreco>({
+        precoMinimo: '',
+        precoMaximo: '',
+    })
+
+    useEffect(() => {
+        filtrarProduto(preco)
+    }, [preco])
 
     return (
         <div>
