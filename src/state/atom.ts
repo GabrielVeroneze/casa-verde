@@ -1,7 +1,7 @@
 import { atom } from 'recoil'
-import { buscaProdutosAsync } from './selector'
+import { IProduto } from '@/interfaces/IProduto'
 
-export const listaProdutosState = atom({
+export const listaProdutosState = atom<IProduto[]>({
     key: 'listaProdutosState',
-    default: buscaProdutosAsync,
+    default: [],
 })
