@@ -1,8 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useManipularProdutos } from '@/hooks/useManipularProdutos'
 import styles from './Ordenador.module.scss'
 
 const Ordenador = () => {
+    const { ordenarProduto } = useManipularProdutos()
+
     const [ordenar, setOrdenar] = useState<string>('relevantes')
+
+    useEffect(() => {
+        ordenarProduto(ordenar)
+    }, [ordenar])
 
     return (
         <div className={styles.ordenadorWrapper}>
