@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import { produtosManipuladosState } from '@/state/atom'
 import { useListaProdutos } from '@/hooks/useListaProdutos'
@@ -7,6 +8,10 @@ import { IFiltroPreco } from '@/interfaces/IFiltroPreco'
 export const useManipularProdutos = () => {
     const { produtos } = useListaProdutos()
     const [produtosManipulados, setProdutosManipulados] = useRecoilState(produtosManipuladosState)
+
+    useEffect(() => {
+        setProdutosManipulados(produtos)
+    }, [produtos, setProdutosManipulados])
 
     const filtrarProduto = (preco: IFiltroPreco) => {
         const precoMinimoFormatado = formatarPreco(preco.precoMinimo)
