@@ -30,8 +30,27 @@ export const useManipularProdutos = () => {
         )
     }
 
+    const ordenarProduto = (ordenador: string) => {
+        switch (ordenador) {
+            case 'relevantes':
+                setProdutosManipulados(produtos)
+                break
+            case 'preco':
+                setProdutosManipulados(
+                    produtosManipulados.sort((a, b) => a.preco - b.preco)
+                )
+                break
+            case 'nome':
+                setProdutosManipulados(
+                    produtosManipulados.sort((a, b) => a.name.localeCompare(b.name))
+                )
+                break
+        }
+    }
+
     return {
         filtrarProduto,
+        ordenarProduto,
         produtosManipulados,
     }
 }
