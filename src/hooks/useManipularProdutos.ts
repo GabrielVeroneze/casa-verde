@@ -19,8 +19,8 @@ export const useManipularProdutos = () => {
         setProdutosManipulados(
             produtos.filter(
                 produto =>
-                    produto.preco > precoMinimoFormatado &&
-                    produto.preco < precoMaximoFormatado
+                    produto.preco >= precoMinimoFormatado &&
+                    produto.preco <= precoMaximoFormatado
             )
         )
     }
