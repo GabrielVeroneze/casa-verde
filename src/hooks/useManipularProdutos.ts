@@ -37,12 +37,12 @@ export const useManipularProdutos = () => {
                 break
             case 'preco':
                 setProdutosManipulados(
-                    produtosManipulados.sort((a, b) => a.preco - b.preco)
+                    [...produtosManipulados].sort((a, b) => a.preco - b.preco)
                 )
                 break
             case 'nome':
                 setProdutosManipulados(
-                    produtosManipulados.sort((a, b) => a.name.localeCompare(b.name))
+                    [...produtosManipulados].sort((a, b) => a.name.localeCompare(b.name))
                 )
                 break
         }
